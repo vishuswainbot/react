@@ -1,0 +1,26 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "This is NR ",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishuswainbot/react.git"
+  },
+  "keywords": [
+    "react",
+    "vswain"
+  ],
+  "author": "Vswain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishuswainbot/react/issues"
+  },
+  "homepage": "https://github.com/vishuswainbot/react#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}
