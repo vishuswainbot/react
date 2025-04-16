@@ -9,6 +9,11 @@ const Body = () => {
 
     return (
       <div className="body">
+      <div className="search">
+        <button className="search">
+          Search
+        </button>
+      </div>
       <div className="filter">
       <button className="filter-btn"
       onClick={()=> {
