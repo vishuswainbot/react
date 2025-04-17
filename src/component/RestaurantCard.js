@@ -4,7 +4,6 @@ const RestaurantCard = (props) => {
     const {resData} = props;
   
     const {name ,cuisines, avgRating, deliveryTime, costForTwo} = resData?.info;
-    // console.log("resData?.info", resData?.info);
   
     return(
       <div className="res-card">
