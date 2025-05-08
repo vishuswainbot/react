@@ -1,20 +1,27 @@
-import {LOGO_URL} from "../utils/constants";
+import { LOGO_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-    const {resData} = props;
-  
-    const {name ,cuisines, avgRating, deliveryTime, costForTwo} = resData?.info;
-  
-    return(
-      <div className="res-card">
-        <img alt="res-logo" className="res-logo" src={LOGO_URL + resData.info.cloudinaryImageId}/>
-        <h3>{name}</h3>
-        <h3>{cuisines.join(", ")}</h3>
-        <h3>{avgRating}</h3>
-        <h3>{deliveryTime}</h3>
-        <h3>{costForTwo}</h3>
-      </div>
-    );
-  };
+  const { resData } = props;
 
-  export default RestaurantCard;
+  const { name, cuisines, avgRating, deliveryTime, costForTwo } = resData?.info;
+
+  return (
+    <div className="res-card">
+      <img
+        alt="res-logo"
+        className="res-logo"
+        src={LOGO_URL + resData.info.cloudinaryImageId}
+      />
+      <div className="res-name-container">
+        <h3 className="res-name">{name}</h3>
+      </div>
+
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating}</h4>
+      <h4>{deliveryTime}</h4>
+      <h4>{costForTwo}</h4>
+    </div>
+  );
+};
+
+export default RestaurantCard;

@@ -6,7 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurant from "./useRestaurant";
 
 const Body = () => {
-  const { listOfResturant, filteredRestaurant, searchText } = useRestaurant();
+  const { listOfResturant, filteredRestaurant, searchText ,setSearchText, setFiltered} = useRestaurant();
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus == false)
