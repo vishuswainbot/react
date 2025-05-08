@@ -1,16 +1,19 @@
+import { Suspense, lazy } from "react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import Body from "./component/Body";
-import About from "./component/About";
-import Contact from "./component/Contact";
 import Error from "./component/Error";
 import RestaurantMenu from "./component/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
+// import Grocery from "./component/Grocery";
 // JSX (transpiled before it reaches the JS) - parcel - Bable
 // JSX => React.createElement => ReactElement-JS Object => HTMLElement(render)
+
+const Grocery = lazy(() => import("./component/Grocery"));
+const About = lazy(() => import("./component/About"));
+const Contact = lazy(() => import("./component/Contact"));
 
 function AppLayout() {
   return (
@@ -21,7 +24,6 @@ function AppLayout() {
     </div>
   );
 }
-
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -34,11 +36,27 @@ const appRouter = createBrowserRouter([
 
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading..........</h1>}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading......</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<h1>Loading........</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:resId",
